@@ -129,9 +129,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2834041}
   - component: {fileID: 2834042}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 1x2 (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -210,7 +210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 32616867}
   - component: {fileID: 32616868}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: plat1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -297,7 +297,7 @@ GameObject:
   m_Component:
   - component: {fileID: 155411885}
   - component: {fileID: 155411886}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: plat1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -384,7 +384,7 @@ GameObject:
   m_Component:
   - component: {fileID: 187548559}
   - component: {fileID: 187548560}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: plat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -471,7 +471,7 @@ GameObject:
   m_Component:
   - component: {fileID: 199583121}
   - component: {fileID: 199583122}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: plat3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -558,7 +558,7 @@ GameObject:
   m_Component:
   - component: {fileID: 214445375}
   - component: {fileID: 214445376}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: plat4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -676,9 +676,9 @@ GameObject:
   m_Component:
   - component: {fileID: 384670638}
   - component: {fileID: 384670639}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 1x2
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -896,13 +896,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 6
-  jumpSpeed: 17
+  jumpSpeed: 5
   _active: 1
   groundCheck: {fileID: 286661789}
   groundCheckRadius: 0
   realGround:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   isGrounded: 0
 --- !u!50 &414834200
 Rigidbody2D:
@@ -1078,9 +1078,9 @@ GameObject:
   m_Component:
   - component: {fileID: 563645930}
   - component: {fileID: 563645931}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 1x5
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1277,9 +1277,9 @@ GameObject:
   m_Component:
   - component: {fileID: 678143652}
   - component: {fileID: 678143653}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 1x4
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1446,7 +1446,7 @@ GameObject:
   m_Component:
   - component: {fileID: 738617080}
   - component: {fileID: 738617081}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: plat1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1533,7 +1533,7 @@ GameObject:
   m_Component:
   - component: {fileID: 772288042}
   - component: {fileID: 772288043}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: plat2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1620,7 +1620,7 @@ GameObject:
   m_Component:
   - component: {fileID: 797614630}
   - component: {fileID: 797614631}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: plat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1707,7 +1707,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1031196195}
   - component: {fileID: 1031196196}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: plat2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1794,7 +1794,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1271760949}
   - component: {fileID: 1271760950}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: plat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1881,7 +1881,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1277023427}
   - component: {fileID: 1277023428}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: plat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2005,9 +2005,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1387065182}
   - component: {fileID: 1387065183}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 1x2 (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2085,7 +2085,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1400048595}
   - component: {fileID: 1400048596}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: plat 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2172,7 +2172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1423745058}
   - component: {fileID: 1423745059}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: plat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2259,7 +2259,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1438676107}
   - component: {fileID: 1438676108}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: plat1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2346,9 +2346,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1509175416}
   - component: {fileID: 1509175417}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 1x2 (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2426,7 +2426,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1813510676}
   - component: {fileID: 1813510677}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: plat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2513,7 +2513,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1860331152}
   - component: {fileID: 1860331153}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: plat3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2719,7 +2719,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2049589741}
   - component: {fileID: 2049589742}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: plat1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2806,7 +2806,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2057430213}
   - component: {fileID: 2057430214}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: plat1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
