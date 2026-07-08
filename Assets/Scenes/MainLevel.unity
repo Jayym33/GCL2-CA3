@@ -405,7 +405,7 @@ Transform:
   m_GameObject: {fileID: 286661788}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.651, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -422,6 +422,8 @@ GameObject:
   - component: {fileID: 414834197}
   - component: {fileID: 414834196}
   - component: {fileID: 414834198}
+  - component: {fileID: 414834200}
+  - component: {fileID: 414834199}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -546,6 +548,54 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.482581, y: 0.82635105}
   m_EdgeRadius: 0
+--- !u!114 &414834199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 414834195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a8d086b6c4e7ab4abdfb65bc8a334d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 6
+  jumpSpeed: 17
+  _active: 1
+  groundCheck: {fileID: 286661789}
+  groundCheckRadius: 0
+  realGround:
+    serializedVersion: 2
+    m_Bits: 0
+  isGrounded: 0
+--- !u!50 &414834200
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 414834195}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
