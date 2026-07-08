@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
 
     //for animation//
-    /*private Animator anim;*/
+    private Animator anim;
     private bool isFacingRight;
 
     private Collider2D _collider;
@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         //health = GetComponent<PlayerHealth>();
-        //anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
 
         _collider = GetComponent<Collider2D>();
@@ -99,7 +99,7 @@ public class PlayerController : MonoBehaviour
         bool ifJumping = Input.GetButtonDown("Jump");
 
         //new input system
-        //bool ifJumping = InputSystem.actions.FindAction("Jump").IsPressed;
+        //bool ifJumping = InputSystem.actions.FindAction("Mario_Jump").IsPressed;
 
         if(ifJumping && isGrounded)
         {
@@ -108,19 +108,21 @@ public class PlayerController : MonoBehaviour
             {
                 jumpSFX.Play();
             }*/
-           
+
+            //anim.SetBool("IsJumping", !isGrounded);
+
         }
 
         if (horizontalMovement != 0)
         {
-            //anim.SetBool("isMoving", true);
+            anim.SetBool("IsWalking", true);
         }
         else
         {
-            //anim.SetBool("isMoving", false);
+            anim.SetBool("IsWalking", false);
         }
 
-        //anim.SetBool("isJumping", !isGrounded);
+        anim.SetBool("IsJumping", !isGrounded);
 
         /*if (health.DamageTaken)
         {
