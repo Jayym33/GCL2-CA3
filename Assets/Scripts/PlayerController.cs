@@ -19,7 +19,8 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody2D rb;
 
-    private Animator anim;
+    //for animation//
+    /*private Animator anim;*/
     private bool isFacingRight;
 
     private Collider2D _collider;
@@ -40,7 +41,7 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         //health = GetComponent<PlayerHealth>();
-        anim = GetComponent<Animator>();
+        //anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
 
         _collider = GetComponent<Collider2D>();
@@ -112,14 +113,14 @@ public class PlayerController : MonoBehaviour
 
         if (horizontalMovement != 0)
         {
-            anim.SetBool("isMoving", true);
+            //anim.SetBool("isMoving", true);
         }
         else
         {
-            anim.SetBool("isMoving", false);
+            //anim.SetBool("isMoving", false);
         }
 
-        anim.SetBool("isJumping", !isGrounded);
+        //anim.SetBool("isJumping", !isGrounded);
 
         /*if (health.DamageTaken)
         {
