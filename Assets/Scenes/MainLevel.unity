@@ -6626,6 +6626,74 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.606461, y: 0.6741252}
   m_EdgeRadius: 0
+--- !u!1001 &866031422
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4257360591277390525, guid: 6cdff69d3c7c388418bbc9c86bbd607a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5088259514168938718, guid: 6cdff69d3c7c388418bbc9c86bbd607a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 5088259514168938718, guid: 6cdff69d3c7c388418bbc9c86bbd607a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 5088259514168938718, guid: 6cdff69d3c7c388418bbc9c86bbd607a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.05905122
+      objectReference: {fileID: 0}
+    - target: {fileID: 5088259514168938718, guid: 6cdff69d3c7c388418bbc9c86bbd607a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5088259514168938718, guid: 6cdff69d3c7c388418bbc9c86bbd607a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5088259514168938718, guid: 6cdff69d3c7c388418bbc9c86bbd607a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5088259514168938718, guid: 6cdff69d3c7c388418bbc9c86bbd607a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5088259514168938718, guid: 6cdff69d3c7c388418bbc9c86bbd607a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5088259514168938718, guid: 6cdff69d3c7c388418bbc9c86bbd607a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5088259514168938718, guid: 6cdff69d3c7c388418bbc9c86bbd607a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173733833668912563, guid: 6cdff69d3c7c388418bbc9c86bbd607a, type: 3}
+      propertyPath: m_Name
+      value: Barrel (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6173733833668912563, guid: 6cdff69d3c7c388418bbc9c86bbd607a, type: 3}
+      propertyPath: m_TagString
+      value: Barrel
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6173733833668912563, guid: 6cdff69d3c7c388418bbc9c86bbd607a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1795893045}
+  m_SourcePrefab: {fileID: 100100000, guid: 6cdff69d3c7c388418bbc9c86bbd607a, type: 3}
 --- !u!1 &870020369
 GameObject:
   m_ObjectHideFlags: 0
@@ -10830,6 +10898,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11aed713e0a016b40ac4ae50ea6f30bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  barrelCollider: {fileID: 1590979597}
+--- !u!58 &1590979597 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 4257360591277390525, guid: 6cdff69d3c7c388418bbc9c86bbd607a, type: 3}
+  m_PrefabInstance: {fileID: 7404955825117008823}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1601564876
 GameObject:
   m_ObjectHideFlags: 0
@@ -11719,6 +11793,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1795893044 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6173733833668912563, guid: 6cdff69d3c7c388418bbc9c86bbd607a, type: 3}
+  m_PrefabInstance: {fileID: 866031422}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1795893045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795893044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11aed713e0a016b40ac4ae50ea6f30bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barrelCollider: {fileID: 1795893046}
+--- !u!58 &1795893046 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 4257360591277390525, guid: 6cdff69d3c7c388418bbc9c86bbd607a, type: 3}
+  m_PrefabInstance: {fileID: 866031422}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1813510675
 GameObject:
   m_ObjectHideFlags: 0
@@ -13966,4 +14063,5 @@ SceneRoots:
   - {fileID: 1579709772}
   - {fileID: 1505806127}
   - {fileID: 7404955825117008823}
+  - {fileID: 866031422}
   - {fileID: 5348770662206855943}
