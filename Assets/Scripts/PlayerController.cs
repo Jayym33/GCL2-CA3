@@ -97,14 +97,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Ladder climbing
-        if (isOnLadder && Mathf.Abs(verticalMovement) > 0.1f)
-        {
-            isClimbing = true;
-        }
-        else if (!isOnLadder)
-        {
-            isClimbing = false;
-        }
+        isClimbing = isOnLadder;
 
         if (isClimbing)
         {
@@ -115,6 +108,9 @@ public class PlayerController : MonoBehaviour
         {
             rb.gravityScale = 1;
         }
+
+        anim.SetBool("IsClimbing", isClimbing);
+        anim.SetFloat("ClimbSpeed", Mathf.Abs(verticalMovement));
 
         isGrounded = Physics2D.OverlapCircle(
             point: groundCheck.position, 
