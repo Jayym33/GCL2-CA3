@@ -6,6 +6,7 @@ public class Barrel : MonoBehaviour
     GameObject barrel;
 
     public float speed = 3f;
+    public int points = 100;
 
     private Transform[] waypoints;
     private int currentWaypoint = 0;
