@@ -190,7 +190,14 @@ public class PlayerController : MonoBehaviour
     {
         isOnLadder = false;
         isClimbing = false;
+
         rb.gravityScale = 1;
+
+        // Stop any upward movement
+        if (rb.linearVelocity.y > 0)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.2f);
+        }
     }
 
     public void SetRespwanPoint(Vector2 position)
