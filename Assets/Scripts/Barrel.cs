@@ -46,5 +46,7 @@ public class Barrel : MonoBehaviour
             SceneManager.LoadScene("MainLevel");
 
         }
+
+
     }
 }
