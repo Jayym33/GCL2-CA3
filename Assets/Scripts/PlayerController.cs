@@ -17,6 +17,12 @@ public class PlayerController : MonoBehaviour
     public LayerMask realGround;
     public bool isGrounded;
 
+    [Header("Ladder")]
+    public float climbSpeed = 4f;
+
+    private bool isOnLadder = false;
+    private bool isClimbing = false;
+
     Rigidbody2D rb;
 
     //for animation//
@@ -71,6 +77,7 @@ public class PlayerController : MonoBehaviour
         //float horizontalMovement = Input.GetAxis("Horizontal");
         //New Input System:
         float horizontalMovement = InputSystem.actions.FindAction("Move").ReadValue<Vector2>().x;
+        float verticalMovement = InputSystem.actions.FindAction("Move").ReadValue<Vector2>().y;
 
         //Move at moveSpeed in the appropriate direction
         if (horizontalMovement > 0)
@@ -89,6 +96,26 @@ public class PlayerController : MonoBehaviour
             
         }
 
+        // Ladder climbing
+        if (isOnLadder && Mathf.Abs(verticalMovement) > 0.1f)
+        {
+            isClimbing = true;
+        }
+        else if (!isOnLadder)
+        {
+            isClimbing = false;
+        }
+
+        if (isClimbing)
+        {
+            rb.gravityScale = 0;
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, verticalMovement * climbSpeed);
+        }
+        else
+        {
+            rb.gravityScale = 1;
+        }
+
         isGrounded = Physics2D.OverlapCircle(
             point: groundCheck.position, 
             radius: groundCheckRadius,
@@ -101,7 +128,7 @@ public class PlayerController : MonoBehaviour
         //new input system
         //bool ifJumping = InputSystem.actions.FindAction("Mario_Jump").IsPressed;
 
-        if(ifJumping && isGrounded)
+        if (ifJumping && isGrounded && !isClimbing)
         {
             rb.linearVelocityY = jumpSpeed;
             /*if (!jumpSFX.isPlaying)
@@ -152,6 +179,18 @@ public class PlayerController : MonoBehaviour
     public void MiniJump()
     {
         rb.linearVelocityY = jumpSpeed/2;
+    }
+
+    public void EnterLadder()
+    {
+        isOnLadder = true;
+    }
+
+    public void ExitLadder()
+    {
+        isOnLadder = false;
+        isClimbing = false;
+        rb.gravityScale = 1;
     }
 
     public void SetRespwanPoint(Vector2 position)
