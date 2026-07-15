@@ -2,15 +2,12 @@ using UnityEngine;
 
 public class DonkeyKong : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public GameObject barrelPrefab;
+    public Transform spawnPoint;
 
-    // Update is called once per frame
-    void Update()
+    public void SpawnBarrel()
     {
-        
+        Debug.Log("Barrel Released!");
+        Instantiate(barrelPrefab,spawnPoint.position,Quaternion.identity);
     }
 }
