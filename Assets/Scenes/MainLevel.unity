@@ -11021,6 +11021,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1590979590 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6173733833668912563, guid: 6cdff69d3c7c388418bbc9c86bbd607a, type: 3}
+  m_PrefabInstance: {fileID: 7404955825117008823}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1590979596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590979590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11aed713e0a016b40ac4ae50ea6f30bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1601564876
 GameObject:
   m_ObjectHideFlags: 0
@@ -14296,10 +14313,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barrel
       objectReference: {fileID: 0}
+    - target: {fileID: 6173733833668912563, guid: 6cdff69d3c7c388418bbc9c86bbd607a, type: 3}
+      propertyPath: m_TagString
+      value: Barrel
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6173733833668912563, guid: 6cdff69d3c7c388418bbc9c86bbd607a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1590979596}
   m_SourcePrefab: {fileID: 100100000, guid: 6cdff69d3c7c388418bbc9c86bbd607a, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
