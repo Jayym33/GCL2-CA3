@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
 
     //for animation//
     private Animator anim;
+    public bool hasHammer= false;
     private bool isFacingRight;
 
     private Collider2D _collider;
@@ -146,6 +147,7 @@ public class PlayerController : MonoBehaviour
         }
 
         anim.SetBool("IsJumping", !isGrounded);
+        anim.SetBool("HasHammer", hasHammer);
 
         /*if (health.DamageTaken)
         {
