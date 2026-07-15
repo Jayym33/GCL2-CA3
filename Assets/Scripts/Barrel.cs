@@ -6,13 +6,13 @@ public class Barrel : MonoBehaviour
     GameObject barrel;
 
     public float speed = 3f;
-    //public BarrelPath path;
 
     private Transform[] waypoints;
     private int currentWaypoint = 0;
 
     void Start()
     {
+        //finds the GameObject w BarrelPathscript attached & copies the waypoint
         waypoints = FindFirstObjectByType<BarrelPath>().waypoints;
     }
 
@@ -21,15 +21,17 @@ public class Barrel : MonoBehaviour
         if (waypoints == null || waypoints.Length == 0)
             return;
 
+        // Move the barrel towards the current waypoint
         transform.position = Vector2.MoveTowards(
             transform.position,
             waypoints[currentWaypoint].position,
             speed * Time.deltaTime
         );
 
-        if (Vector2.Distance(transform.position,
-                             waypoints[currentWaypoint].position) < 0.05f)
+        // Check if the barrel is very close to the waypoint
+        if (Vector2.Distance(transform.position,waypoints[currentWaypoint].position) < 0.05f)
         {
+            // Switch to the next waypoint
             currentWaypoint++;
         }
     }
