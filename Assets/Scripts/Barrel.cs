@@ -38,15 +38,20 @@ public class Barrel : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
         if (collision.gameObject.CompareTag("Player"))
         {
-            Destroy(barrel);
-            Debug.Log("Barrel collided");
-            SceneManager.LoadScene("MainLevel");
+            PlayerController player = collision.gameObject.GetComponent<PlayerController>();
 
+            if (player != null && player.hasHammer)
+            {
+                Debug.Log("Barrel destroyed!");
+                Destroy(gameObject);
+            }
+            else
+            {
+                Debug.Log("Barrel collided");
+                SceneManager.LoadScene("MainLevel");
+            }
         }
-
-
     }
 }
