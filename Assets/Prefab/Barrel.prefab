@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 4876076363979733333}
   - component: {fileID: 849213179129374839}
   - component: {fileID: 4257360591277390525}
-  - component: {fileID: 7461729876051488279}
+  - component: {fileID: -7079350654262355829}
   m_Layer: 0
   m_Name: Barrel
-  m_TagString: Barrel
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 6173733833668912563}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.01, y: 6.11, z: -0.05905122}
-  m_LocalScale: {x: 0.6251, y: 0.6251, z: 0.6251}
+  m_LocalPosition: {x: -2.2891, y: 2.7558, z: -0.05905122}
+  m_LocalScale: {x: 0.5475251, y: 0.5475251, z: 0.5475251}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -176,7 +176,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.38
---- !u!114 &7461729876051488279
+--- !u!114 &-7079350654262355829
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -185,6 +185,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 6173733833668912563}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11aed713e0a016b40ac4ae50ea6f30bf, type: 3}
+  m_Script: {fileID: 11500000, guid: b3b2bce86df2c714081b67ead02297e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  speed: 3
