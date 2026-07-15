@@ -4,20 +4,35 @@ using UnityEngine.SceneManagement;
 public class Barrel : MonoBehaviour
 {
     GameObject barrel;
- 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    public float speed = 3f;
+    //public BarrelPath path;
+
+    private Transform[] waypoints;
+    private int currentWaypoint = 0;
+
     void Start()
     {
-        
+        waypoints = FindFirstObjectByType<BarrelPath>().waypoints;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        if (waypoints == null || waypoints.Length == 0)
+            return;
 
+        transform.position = Vector2.MoveTowards(
+            transform.position,
+            waypoints[currentWaypoint].position,
+            speed * Time.deltaTime
+        );
+
+        if (Vector2.Distance(transform.position,
+                             waypoints[currentWaypoint].position) < 0.05f)
+        {
+            currentWaypoint++;
+        }
     }
-
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
