@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class IntroFreeze : MonoBehaviour
 {
-    // Reference your movement script here
+    // Reference player movement script
     [SerializeField] private MonoBehaviour PlayerController;
     [SerializeField] private float freezeDuration = 3f;
 
@@ -24,7 +24,7 @@ public class IntroFreeze : MonoBehaviour
         // Wait for the specified duration
         yield return new WaitForSeconds(freezeDuration);
 
-        // Re-enable the movement script
+        // Re-enable the player movement script
         PlayerController.enabled = true;
     }
 }
