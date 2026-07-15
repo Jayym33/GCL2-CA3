@@ -10312,7 +10312,7 @@ GameObject:
   - component: {fileID: 1505806126}
   - component: {fileID: 1505806125}
   m_Layer: 0
-  m_Name: P
+  m_Name: Princess
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10923,7 +10923,7 @@ GameObject:
   - component: {fileID: 1579709771}
   - component: {fileID: 1579709770}
   m_Layer: 0
-  m_Name: DK
+  m_Name: DonkeyK
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
