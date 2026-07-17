@@ -45,7 +45,7 @@ public class Barrel : MonoBehaviour
             if (player != null && player.hasHammer)
             {
                 Debug.Log("Barrel destroyed!");
-                Destroy(gameObject);
+                Destroy(gameObject); //error for this, as hammer is supposed to destroy the barrel but right now the mario itself destroys the barrel too
             }
             else
             {
