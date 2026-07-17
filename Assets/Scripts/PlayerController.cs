@@ -28,6 +28,9 @@ public class PlayerController : MonoBehaviour
     //for animation//
     private Animator anim;
     public bool hasHammer= false;
+    [Header("Hammer")]
+    public float hammerDuration = 12f;   // How long the hammer lasts
+    private float hammerTimer = 0f;
     private bool isFacingRight;
 
     private Collider2D _collider;
@@ -154,6 +157,16 @@ public class PlayerController : MonoBehaviour
             anim.SetTrigger("Hurt");
             health.DamageTaken = false;
         }*/
+        // Hammer timer
+        if (hasHammer)
+        {
+            hammerTimer -= Time.deltaTime;
+
+            if (hammerTimer <= 0)
+            {
+                hasHammer = false;
+            }
+        }
 
         if (!isFacingRight && horizontalMovement > 0)
         {
@@ -243,6 +256,10 @@ public class PlayerController : MonoBehaviour
 
         SceneManager.LoadScene("Lose");
         
+    }
+    public void StartHammerTimer()
+    {
+        hammerTimer = hammerDuration;
     }
 
 }
