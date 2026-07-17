@@ -7,8 +7,6 @@ public class HammerPickup : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             PlayerController player = other.GetComponent<PlayerController>();
-
-            player.hasHammer = true;
             player.StartHammerTimer();
 
             Destroy(gameObject);

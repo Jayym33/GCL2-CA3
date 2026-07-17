@@ -3,8 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class Barrel : MonoBehaviour
 {
-    GameObject barrel;
-
     public float speed = 3f;
     public int points = 100;
 
@@ -13,7 +11,7 @@ public class Barrel : MonoBehaviour
 
     void Start()
     {
-        //finds the GameObject w BarrelPathscript attached & copies the waypoint
+        // Finds the GameObject with BarrelPath attached and copies the waypoints
         waypoints = FindFirstObjectByType<BarrelPath>().waypoints;
     }
 
@@ -21,6 +19,13 @@ public class Barrel : MonoBehaviour
     {
         if (waypoints == null || waypoints.Length == 0)
             return;
+
+        // Destroy barrel if it reaches the end of the path
+        if (currentWaypoint >= waypoints.Length)
+        {
+            Destroy(gameObject);
+            return;
+        }
 
         // Move the barrel towards the current waypoint
         transform.position = Vector2.MoveTowards(
@@ -30,28 +35,19 @@ public class Barrel : MonoBehaviour
         );
 
         // Check if the barrel is very close to the waypoint
-        if (Vector2.Distance(transform.position,waypoints[currentWaypoint].position) < 0.05f)
+        if (Vector2.Distance(transform.position, waypoints[currentWaypoint].position) < 0.05f)
         {
-            // Switch to the next waypoint
             currentWaypoint++;
         }
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // Mario's BODY touches the barrel -> Mario dies
         if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerController player = collision.gameObject.GetComponent<PlayerController>();
-
-            if (player != null && player.hasHammer)
-            {
-                Debug.Log("Barrel destroyed!");
-                Destroy(gameObject); //error for this, as hammer is supposed to destroy the barrel but right now the mario itself destroys the barrel too
-            }
-            else
-            {
-                Debug.Log("Barrel collided");
-                SceneManager.LoadScene("MainLevel");
-            }
+            Debug.Log("Barrel collided");
+            SceneManager.LoadScene("MainLevel");
         }
     }
 }

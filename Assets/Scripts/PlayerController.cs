@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     public bool hasHammer= false;
     [Header("Hammer")]
+    public GameObject hammerHitBox;
     public float hammerDuration = 12f;   // How long the hammer lasts
     private float hammerTimer = 0f;
     private bool isFacingRight;
@@ -66,6 +67,11 @@ public class PlayerController : MonoBehaviour
 
         _initialSpawnPoint = transform.position; // TRUE starting point
         _respwanPT = _initialSpawnPoint;          // First respawn is start
+                                                  // Hammer hitbox starts disabled
+        if (hammerHitBox != null)
+        {
+            hammerHitBox.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -165,6 +171,11 @@ public class PlayerController : MonoBehaviour
             if (hammerTimer <= 0)
             {
                 hasHammer = false;
+
+                if (hammerHitBox != null)
+                {
+                    hammerHitBox.SetActive(false);
+                }
             }
         }
 
@@ -259,7 +270,12 @@ public class PlayerController : MonoBehaviour
     }
     public void StartHammerTimer()
     {
+        hasHammer = true;
         hammerTimer = hammerDuration;
-    }
 
+        if (hammerHitBox != null)
+        {
+            hammerHitBox.SetActive(true);
+        }
+    }
 }
