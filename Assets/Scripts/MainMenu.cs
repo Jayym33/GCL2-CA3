@@ -7,8 +7,8 @@ public class MainMenu : MonoBehaviour
 {
    public void PlayGame()
     {
-        //SceneManager.LoadScene("MainLevel");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        SceneManager.LoadScene("MainLevel");
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 
    public void QuitGame()
@@ -18,7 +18,8 @@ public class MainMenu : MonoBehaviour
 
     public void Credit()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        SceneManager.LoadScene("Credits");
     }
 
     public void Back()
