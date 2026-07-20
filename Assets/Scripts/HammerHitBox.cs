@@ -8,6 +8,7 @@ public class HammerHitBox : MonoBehaviour
         {
             Debug.Log("Hammer hit barrel!");
             Destroy(other.gameObject);
+            ScoreManager.instance.AddPoint();
         }
     }
 }
