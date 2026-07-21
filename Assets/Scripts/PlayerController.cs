@@ -36,6 +36,8 @@ public class PlayerController : MonoBehaviour
 
     private bool isFacingRight;
 
+    
+
     //==================== SHIELD ====================//
 
     [Header("Shield")]
@@ -276,12 +278,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void SetRespwanPoint(Vector2 position)
+    public void SetRespwanPoint(Vector2 position) //gonna remove this
     {
         _respwanPT = (Vector2)position;
     }
 
-    public void RespawnToSP()
+    public void RespawnToSP() //gonna remove this
     {
         if (!_active) return;
 
@@ -294,7 +296,7 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(FallRespawnRoutine());
     }
 
-    private IEnumerator FallRespawnRoutine()
+    private IEnumerator FallRespawnRoutine() // gonna remove this
     {
         yield return new WaitForSeconds(1.2f);
 
@@ -304,23 +306,32 @@ public class PlayerController : MonoBehaviour
         _collider.enabled = true;
     }
 
-    public void ResetSpawnToInitial()
+    public void ResetSpawnToInitial() //gonna remove this
     {
         _respwanPT = _initialSpawnPoint;
     }
 
     public void Die()
     {
-        if (!_active) return; // prevents soft-lock double death
+        /*if (!_active) return; // prevents soft-lock double death
 
         _active = false;
         _collider.enabled = false;
 
         MiniJump();
 
-        SceneManager.LoadScene("Lose");
+        SceneManager.LoadScene("Lose");*/
+
+
+        //set death sprite
+        anim.SetBool("NoHealth", true);
+        Invoke("ReloadScene", 0.2f);
     }
 
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene("MainLevel");
+    }
     //==================== HAMMER ====================//
 
     // Starts the hammer timer when Mario picks up a hammer
