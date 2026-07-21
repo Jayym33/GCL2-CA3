@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 public class Barrel : MonoBehaviour
 {
     public float speed = 3f;
-    public int points = 100;
 
     private Transform[] waypoints;
     private int currentWaypoint = 0;
