@@ -129,18 +129,26 @@ public class PlayerController : MonoBehaviour
         }
 
         // Ladder climbing
-        isClimbing = isOnLadder;
-
-        if (isClimbing)
+        // Mario cannot climb while holding the hammer
+        if (hasHammer)
         {
-            rb.gravityScale = 0;
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, verticalMovement * climbSpeed);
+            isClimbing = false;
+            rb.gravityScale = 1;
         }
         else
         {
-            rb.gravityScale = 1;
-        }
+            isClimbing = isOnLadder;
 
+            if (isClimbing)
+            {
+                rb.gravityScale = 0;
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, verticalMovement * climbSpeed);
+            }
+            else
+            {
+                rb.gravityScale = 1;
+            }
+        }
         anim.SetBool("IsClimbing", isClimbing);
         anim.SetFloat("ClimbSpeed", Mathf.Abs(verticalMovement));
 
