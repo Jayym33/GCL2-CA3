@@ -324,7 +324,7 @@ public class PlayerController : MonoBehaviour
 
         //set death sprite
         anim.SetBool("NoHealth", true);
-        Invoke("ReloadScene", 1f);
+        Invoke("ReloadScene", 0.2f);
     }
 
     public void ReloadScene()
