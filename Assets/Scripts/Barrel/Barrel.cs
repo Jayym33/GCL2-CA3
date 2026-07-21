@@ -12,9 +12,6 @@ public class Barrel : MonoBehaviour
     {
         // Finds the GameObject with BarrelPath attached and copies the waypoints
         waypoints = FindFirstObjectByType<BarrelPath>().waypoints;
-
-        // Destroy this barrel after 15 seconds
-        Destroy(gameObject, 15f);
     }
 
     void Update()
@@ -41,6 +38,7 @@ public class Barrel : MonoBehaviour
         if (Vector2.Distance(transform.position, waypoints[currentWaypoint].position) < 0.05f)
         {
             currentWaypoint++;
+            Debug.Log(currentWaypoint);
         }
     }
 
