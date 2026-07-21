@@ -16,6 +16,7 @@ public class Barrel : MonoBehaviour
 
     void Update()
     {
+        //checks if there are waypoints available
         if (waypoints == null || waypoints.Length == 0)
             return;
 
