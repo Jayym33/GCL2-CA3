@@ -27,12 +27,30 @@ public class PlayerController : MonoBehaviour
 
     //for animation//
     private Animator anim;
-    public bool hasHammer= false;
+    public bool hasHammer = false;
+
     [Header("Hammer")]
     public GameObject hammerHitBox;
     public float hammerDuration = 12f;   // How long the hammer lasts
     private float hammerTimer = 0f;
+
     private bool isFacingRight;
+
+    //==================== SHIELD ====================//
+
+    [Header("Shield")]
+
+    // Keeps track of whether Mario currently has a shield
+    public bool hasShield = false;
+
+    // How long the shield lasts
+    public float shieldDuration = 5f;
+
+    // Counts down until the shield expires
+    private float shieldTimer = 0f;
+
+    // Shield object that surrounds Mario
+    public GameObject shieldVisual;
 
     private Collider2D _collider;
     private Vector2 _respwanPT;
@@ -67,10 +85,17 @@ public class PlayerController : MonoBehaviour
 
         _initialSpawnPoint = transform.position; // TRUE starting point
         _respwanPT = _initialSpawnPoint;          // First respawn is start
-                                                  // Hammer hitbox starts disabled
+
+        // Hammer hitbox starts disabled
         if (hammerHitBox != null)
         {
             hammerHitBox.SetActive(false);
+        }
+
+        // Shield visual starts disabled
+        if (shieldVisual != null)
+        {
+            shieldVisual.SetActive(false);
         }
     }
 
@@ -82,9 +107,9 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-
         //Old/ legacy Input System:
         //float horizontalMovement = Input.GetAxis("Horizontal");
+
         //New Input System:
         float horizontalMovement = InputSystem.actions.FindAction("Move").ReadValue<Vector2>().x;
         float verticalMovement = InputSystem.actions.FindAction("Move").ReadValue<Vector2>().y;
@@ -98,12 +123,9 @@ public class PlayerController : MonoBehaviour
         {
             rb.linearVelocityX = -moveSpeed;
         }
-
         else
         {
             rb.linearVelocityX = 0;
-
-            
         }
 
         // Ladder climbing
@@ -123,7 +145,7 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("ClimbSpeed", Mathf.Abs(verticalMovement));
 
         isGrounded = Physics2D.OverlapCircle(
-            point: groundCheck.position, 
+            point: groundCheck.position,
             radius: groundCheckRadius,
             layerMask: realGround);
 
@@ -137,13 +159,13 @@ public class PlayerController : MonoBehaviour
         if (ifJumping && isGrounded && !isClimbing)
         {
             rb.linearVelocityY = jumpSpeed;
+
             /*if (!jumpSFX.isPlaying)
             {
                 jumpSFX.Play();
             }*/
 
             //anim.SetBool("IsJumping", !isGrounded);
-
         }
 
         if (horizontalMovement != 0)
@@ -163,7 +185,9 @@ public class PlayerController : MonoBehaviour
             anim.SetTrigger("Hurt");
             health.DamageTaken = false;
         }*/
-        // Hammer timer
+
+        //==================== HAMMER TIMER ====================//
+
         if (hasHammer)
         {
             hammerTimer -= Time.deltaTime;
@@ -176,6 +200,28 @@ public class PlayerController : MonoBehaviour
                 {
                     hammerHitBox.SetActive(false);
                 }
+            }
+        }
+
+        //==================== SHIELD TIMER ====================//
+
+        if (hasShield)
+        {
+            // Count down every frame
+            shieldTimer -= Time.deltaTime;
+
+            // Shield expires after 5 seconds
+            if (shieldTimer <= 0)
+            {
+                hasShield = false;
+
+                // Hide shield visual
+                if (shieldVisual != null)
+                {
+                    shieldVisual.SetActive(false);
+                }
+
+                Debug.Log("Shield expired!");
             }
         }
 
@@ -197,10 +243,9 @@ public class PlayerController : MonoBehaviour
         transform.localScale = localScale;
     }
 
-
     public void MiniJump()
     {
-        rb.linearVelocityY = jumpSpeed/2;
+        rb.linearVelocityY = jumpSpeed / 2;
     }
 
     public void EnterLadder()
@@ -225,7 +270,6 @@ public class PlayerController : MonoBehaviour
     public void SetRespwanPoint(Vector2 position)
     {
         _respwanPT = (Vector2)position;
-
     }
 
     public void RespawnToSP()
@@ -266,8 +310,11 @@ public class PlayerController : MonoBehaviour
         MiniJump();
 
         SceneManager.LoadScene("Lose");
-        
     }
+
+    //==================== HAMMER ====================//
+
+    // Starts the hammer timer when Mario picks up a hammer
     public void StartHammerTimer()
     {
         hasHammer = true;
@@ -277,5 +324,40 @@ public class PlayerController : MonoBehaviour
         {
             hammerHitBox.SetActive(true);
         }
+    }
+
+    //==================== SHIELD ====================//
+
+    // Called when Mario picks up a shield
+    public void StartShieldTimer()
+    {
+        // Give Mario the shield
+        hasShield = true;
+
+        // Reset timer
+        shieldTimer = shieldDuration;
+
+        // Show shield around Mario
+        if (shieldVisual != null)
+        {
+            shieldVisual.SetActive(true);
+        }
+
+        Debug.Log("Shield activated!");
+    }
+
+    // Removes the shield after blocking one barrel
+    public void RemoveShield()
+    {
+        hasShield = false;
+
+        shieldTimer = 0f;
+
+        if (shieldVisual != null)
+        {
+            shieldVisual.SetActive(false);
+        }
+
+        Debug.Log("Shield broke!");
     }
 }

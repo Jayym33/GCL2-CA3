@@ -16,7 +16,7 @@ public class Barrel : MonoBehaviour
 
     void Update()
     {
-        //checks if there are waypoints available
+        // Checks if there are waypoints available
         if (waypoints == null || waypoints.Length == 0)
             return;
 
@@ -43,9 +43,27 @@ public class Barrel : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Mario's BODY touches the barrel -> Mario dies
+        // Check if Mario touched the barrel
         if (collision.gameObject.CompareTag("Player"))
         {
+            // Get Mario's PlayerController script
+            PlayerController player = collision.gameObject.GetComponent<PlayerController>();
+
+            // If Mario has a shield
+            if (player != null && player.hasShield)
+            {
+                Debug.Log("Shield blocked the barrel!");
+
+                // Remove the shield
+                player.RemoveShield();
+
+                // Destroy this barrel
+                Destroy(gameObject);
+
+                return;
+            }
+
+            // Mario does not have a shield, so he dies
             Debug.Log("Barrel collided");
             SceneManager.LoadScene("MainLevel");
         }
