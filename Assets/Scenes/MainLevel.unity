@@ -18135,7 +18135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2357176482336428067, guid: 3a189f120540e844f823c7f3ac42f488, type: 3}
       propertyPath: timeRemaining
-      value: 120
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 7420737905535614075, guid: 3a189f120540e844f823c7f3ac42f488, type: 3}
       propertyPath: m_Pivot.x
