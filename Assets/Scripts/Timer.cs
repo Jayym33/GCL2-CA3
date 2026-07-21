@@ -1,6 +1,5 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SimpleTimer : MonoBehaviour
@@ -60,8 +59,7 @@ public class SimpleTimer : MonoBehaviour
 
     void OnTimerEnd()
     {
-        Debug.Log("Time is up!");
-        // Add game-over or level completion trigger logic here if going by counting down for this mechanic
+        Debug.Log("Time is up!"); //time's up, lose screeen triggered
         SceneManager.LoadScene("LoseScreen");
     }
 }
