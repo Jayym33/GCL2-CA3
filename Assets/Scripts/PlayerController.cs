@@ -65,15 +65,16 @@ public class PlayerController : MonoBehaviour
     */
 
     //additional stuff//
-    //public PlayerHealth health;
+    public PlayerHealth health;
 
     void Awake()
     {
-        //health = GetComponent<PlayerHealth>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
 
         _collider = GetComponent<Collider2D>();
+
+        health = GetComponent<PlayerHealth>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

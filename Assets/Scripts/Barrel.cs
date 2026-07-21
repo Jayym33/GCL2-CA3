@@ -12,6 +12,9 @@ public class Barrel : MonoBehaviour
     {
         // Finds the GameObject with BarrelPath attached and copies the waypoints
         waypoints = FindFirstObjectByType<BarrelPath>().waypoints;
+
+        // Destroy this barrel after 15 seconds
+        Destroy(gameObject, 15f);
     }
 
     void Update()
@@ -63,9 +66,17 @@ public class Barrel : MonoBehaviour
                 return;
             }
 
-            // Mario does not have a shield, so he dies
+            // Mario does not have a shield, so he takes damage
             Debug.Log("Barrel collided");
-            SceneManager.LoadScene("MainLevel");
+
+            PlayerHealth health = collision.gameObject.GetComponent<PlayerHealth>();
+
+            if (health != null)
+            {
+                health.TakeDamage();
+            }
+
+            Destroy(gameObject);
         }
     }
 }
