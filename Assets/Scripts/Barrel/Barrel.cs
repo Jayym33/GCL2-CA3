@@ -75,7 +75,6 @@ public class Barrel : MonoBehaviour
             }
 
             Destroy(gameObject);
-
             player.Die();
 
         }
