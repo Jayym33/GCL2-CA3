@@ -65,7 +65,8 @@ public class Barrel : MonoBehaviour
 
             // Mario does not have a shield, so he dies
             Debug.Log("Barrel collided");
-            SceneManager.LoadScene("MainLevel");
+            player.Die();
+            
         }
     }
 }
