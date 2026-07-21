@@ -1,11 +1,13 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SimpleTimer : MonoBehaviour
 {
     [Header("Timer Settings")]
-    public float timeRemaining = 0f; // Starting time in seconds,do make it 0 for timer and 60 for counting down
-    public bool isCountdown = false;    // True for countdown, false for stopwatch
+    public float timeRemaining = 120f; // Starting time in seconds,do make it 0 for timer and 60 for counting down
+    public bool isCountdown = true;    // True for countdown, false for stopwatch
     public bool timerIsRunning = false;
 
     [Header("UI Components")]
@@ -60,5 +62,6 @@ public class SimpleTimer : MonoBehaviour
     {
         Debug.Log("Time is up!");
         // Add game-over or level completion trigger logic here if going by counting down for this mechanic
+        SceneManager.LoadScene("LoseScreen");
     }
 }
