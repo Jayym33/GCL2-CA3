@@ -325,12 +325,15 @@ public class PlayerController : MonoBehaviour
 
         //set death sprite
         anim.SetBool("NoHealth", true);
-        Invoke("ReloadScene", 0.2f);
+        Invoke("ReloadScene", 0.6f);
+       
     }
 
     public void ReloadScene()
     {
-        SceneManager.LoadScene("MainLevel");
+        //SceneManager.LoadScene("MainLevel");
+        ResetSpawnToInitial();
+        anim.SetBool("NoHealth", false);
     }
     //==================== HAMMER ====================//
 

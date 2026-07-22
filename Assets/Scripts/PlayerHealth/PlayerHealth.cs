@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class PlayerHealth : MonoBehaviour
     public Sprite emptyHeart;
 
     private PlayerController player;
+
+    
 
     void Start()
     {
@@ -32,16 +35,23 @@ public class PlayerHealth : MonoBehaviour
 
         if (health <= 0)
         {
+            LoseNoHealth();
             // Restore all hearts
-            health = 3;
+            //health = 3;
 
             // Respawn Mario
-            player.RespawnToSP();
+            //player.RespawnToSP();
         }
         else
         {
             // Mario still has hearts left
             player.RespawnToSP();
         }
+    }
+
+    public void LoseNoHealth()
+    {
+        Debug.Log("No more health!"); //no health, lose screeen triggered
+        SceneManager.LoadScene("LoseScreen");
     }
 }
