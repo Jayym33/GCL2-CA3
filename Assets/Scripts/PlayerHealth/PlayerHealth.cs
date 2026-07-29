@@ -36,11 +36,7 @@ public class PlayerHealth : MonoBehaviour
         if (health <= 0)
         {
             LoseNoHealth();
-            // Restore all hearts
-            //health = 3;
-
-            // Respawn Mario
-            //player.RespawnToSP();
+          
         }
         else
         {
